@@ -5,6 +5,7 @@ require 'csv'
 class Sheaf ; end
 
 require 'sheaf/parser'
+require 'sheaf/order'
 
 class Sheaf
   def self.create(filepath)
