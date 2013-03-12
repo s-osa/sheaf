@@ -3,10 +3,16 @@ require 'spec_helper'
 
 describe Sheaf do
   describe "#create" do
-    context "receive Amazon TSV" do
+    context "receive path of Amazon TSV" do
       it "should return instance of Sheaf::Amazon" do
         @sheaf = Sheaf.create("spec/files/amazon_order_file.txt")
-        @sheaf.class.should == Sheaf::Amazon
+        @sheaf.class.should == Sheaf::Parser::Amazon
+      end
+    end
+
+    context "receive invalid path" do
+      it "should raise TypeError" do
+        lambda{ Sheaf.create("spec/files/invalid_file.jpg") }.should raise_error(TypeError)
       end
     end
   end
