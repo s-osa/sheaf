@@ -3,10 +3,11 @@ require 'spec_helper'
 
 describe Sheaf::Parser::Amazon do
   before do
+    pending "wait for imprementation of Resident"
     filepath = "spec/files/amazon_order_file.txt"
     @sheaf   = Sheaf::Parser::Amazon.new(filepath)
   end
-  
+
   describe "#new" do
     it "should return instance of Sheaf::Parser::Amazon" do
       @sheaf.class.should == Sheaf::Parser::Amazon

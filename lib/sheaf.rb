@@ -6,6 +6,7 @@ class Sheaf ; end
 
 require 'sheaf/parser'
 require 'sheaf/order'
+require 'sheaf/resident'
 
 class Sheaf
   def self.create(filepath)

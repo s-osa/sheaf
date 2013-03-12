@@ -9,7 +9,8 @@ class Sheaf::Order
     @used_point     = params[:used_point]
     @shipping_price = params[:shipping_price]
     @comment        = params[:comment]
+    @customer       = Sheaf::Resident.new(params[:customer])
   end
 
-  attr_accessor :number, :order_datetime, :payment_method, :payment_status, :used_point, :shipping_price, :comment
+  attr_accessor :number, :order_datetime, :payment_method, :payment_status, :used_point, :shipping_price, :comment, :customer
 end

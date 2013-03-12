@@ -5,6 +5,7 @@ describe Sheaf do
   describe "#create" do
     context "receive path of Amazon TSV" do
       it "should return instance of Sheaf::Amazon" do
+        pending "wait for imprementation of Resident"
         @sheaf = Sheaf.create("spec/files/amazon_order_file.txt")
         @sheaf.class.should == Sheaf::Parser::Amazon
       end

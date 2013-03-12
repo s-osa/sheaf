@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'spec_helper'
 
 describe Sheaf::Order do
@@ -10,10 +11,16 @@ describe Sheaf::Order do
                               used_point:     123,
                               shipping_price: 630,
                               comment:        "This is a comment.",
-                              
+                              customer: {
+                                name:         "ARAMAKI Daisuke",
+                                phone_number: "000-1111-2222",
+                                postal_code:  "000-0000",
+                                address:      "兵庫県神戸市中央区東川崎町一丁目1234-5678"
+
+                              }
                               )
   end
-  
+
   describe "#number" do
     it "should return order number" do
       @order.number.should == "123456789"
@@ -53,6 +60,12 @@ describe Sheaf::Order do
   describe "#comment" do
     it "should return comment" do
       @order.comment.should == "This is a comment."
+    end
+  end
+
+  describe "#customer" do
+    it "should return instance of Resident" do
+      @order.customer.class.should == Sheaf::Resident
     end
   end
 end
